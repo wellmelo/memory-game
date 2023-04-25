@@ -14,7 +14,7 @@ const handleSubmit = (event) => {
     event.preventDefault();
 
     localStorage.setItem('player', input.value);
-    window.location = 'pages/game.html';
+    window.location = '/game';
 };
 
 input.addEventListener('input', validateInput);

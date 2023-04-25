@@ -19,7 +19,7 @@ const characters = [
 const createElement = (tag, className) => {
     const element = document.createElement(tag);
     element.className = className;
-    refresh.style.display = 'none';
+    refresh.setAttribute('disabled', '');
 
     return element;
 };
@@ -30,12 +30,12 @@ let secondCard = '';
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
-    if (disabledCards.length === 20) {
-        refresh.style.display = 'inline';
+    if (disabledCards.length === 2) {
         clearInterval(this.loop);
         alert(
-            `Parabéns ${spanPlayer.innerHTML}! Seu tempo foi de ${timer.innerHTML}`
+            `Parabéns ${spanPlayer.innerHTML}! Seu tempo foi de ${timer.innerHTML} segundos!`
         );
+        refresh.removeAttribute('disabled');
     }
 };
 

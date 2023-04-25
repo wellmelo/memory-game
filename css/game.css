@@ -77,7 +77,10 @@ button.refresh {
     margin-left: 20px;
     border-radius: 5px;
     cursor: pointer;
-    display: flex;
+}
+
+button.refresh:disabled {
+    cursor: auto;
 }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
