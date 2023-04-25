@@ -1,6 +1,7 @@
 const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
+const refresh = document.querySelector('.refresh');
 
 const characters = [
     'vedita',
@@ -18,6 +19,8 @@ const characters = [
 const createElement = (tag, className) => {
     const element = document.createElement(tag);
     element.className = className;
+    refresh.style.display = 'none';
+
     return element;
 };
 
@@ -28,6 +31,7 @@ const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
     if (disabledCards.length === 20) {
+        refresh.style.display = 'inline';
         clearInterval(this.loop);
         alert(
             `Parabéns ${spanPlayer.innerHTML}! Seu tempo foi de ${timer.innerHTML}`

@@ -17,18 +17,18 @@ header {
     background-color: rgba(255, 255, 255, 0.6);
     font-size: 1.2em;
     width: 100%;
-    max-width: 800px;
-    padding: 30px;
+    max-width: 1000px;
+    padding: 15px;
     margin: 0 0 30px;
     border-radius: 5px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 15px;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0px auto;
 }
 
@@ -69,4 +69,21 @@ header {
 .disabled-card {
     filter: saturate(0);
     opacity: 0.5;
+}
+
+button.refresh {
+    padding: 5px 10px;
+    font-size: 0.7em;
+    margin-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
