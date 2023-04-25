@@ -37,9 +37,11 @@ header {
     width: 100%;
     border-radius: 5px;
     position: relative;
-    transition: all 400ms ease;
-    transform-style: preserve-3d;
     background-color: #ccc;
+
+    -webkit-transition: all 0.4s ease;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
 }
 
 .face {
@@ -50,7 +52,9 @@ header {
     background-position: center;
     border: 2px solid #a52a2a;
     border-radius: 5px;
-    transition: all 400ms ease;
+
+    -webkit-transition: all 0.4s ease;
+    -webkit-backface-visibility: hidden;
 }
 
 .front {
@@ -68,7 +72,7 @@ header {
 
 .disabled-card {
     filter: saturate(0);
-    opacity: 0.5;
+    opacity: 0.9;
 }
 
 button.refresh {
@@ -76,11 +80,14 @@ button.refresh {
     font-size: 0.7em;
     margin-left: 20px;
     border-radius: 5px;
+    background-color: #a52a2a;
+    color: #fff;
     cursor: pointer;
 }
 
 button.refresh:disabled {
     cursor: auto;
+    background-color: #ccc;
 }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
