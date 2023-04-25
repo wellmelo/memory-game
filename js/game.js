@@ -1,4 +1,6 @@
 const grid = document.querySelector('.grid');
+const spanPlayer = document.querySelector('.player');
+const timer = document.querySelector('.timer');
 
 const characters = [
     'vedita',
@@ -26,7 +28,10 @@ const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
     if (disabledCards.length === 20) {
-        alert('Parabéns guerreiro, você conseguiu!');
+        clearInterval(this.loop);
+        alert(
+            `Parabéns ${spanPlayer.innerHTML}! Seu tempo foi de ${timer.innerHTML}`
+        );
     }
 };
 
@@ -95,4 +100,17 @@ const loadGame = () => {
         grid.appendChild(card);
     });
 };
-loadGame();
+
+const startTimer = () => {
+    this.loop = setInterval(() => {
+        const currentTime = +timer.innerHTML;
+        timer.innerHTML = currentTime + 1;
+    }, 1000);
+};
+
+window.onload = () => {
+    spanPlayer.innerHTML = localStorage.getItem('player');
+
+    startTimer();
+    loadGame();
+};
