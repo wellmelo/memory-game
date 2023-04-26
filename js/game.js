@@ -1,7 +1,30 @@
 const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
+const nomeplayer = document.querySelector('.nomeplayer');
 const timer = document.querySelector('.timer');
+const timerdois = document.querySelector('.timerdois');
 const refresh = document.querySelector('.refresh');
+
+// Pega o modal
+var modal = document.getElementById('myModal');
+
+// Pega o botão que abre o modal
+var btn = document.getElementById('myBtn');
+
+// Pega o elemento <span> que fecha o modal
+var span = document.getElementsByClassName('close')[0];
+
+// Quando o usuário clicar em <span> (x), feche o modal
+span.onclick = function () {
+    modal.style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+};
 
 const characters = [
     'vedita',
@@ -19,7 +42,7 @@ const characters = [
 const createElement = (tag, className) => {
     const element = document.createElement(tag);
     element.className = className;
-    refresh.setAttribute('disabled', '');
+    refresh.style.display = 'none';
 
     return element;
 };
@@ -30,12 +53,11 @@ let secondCard = '';
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
-    if (disabledCards.length === 20) {
+    if (disabledCards.length === 2) {
         clearInterval(this.loop);
-        alert(
-            `Parabéns ${spanPlayer.innerHTML}! Seu tempo foi de ${timer.innerHTML} segundos!`
-        );
-        refresh.removeAttribute('disabled');
+        // Quando ganha, exibe o modal
+        modal.style.display = 'block';
+        refresh.style.display = 'inline';
     }
 };
 
@@ -109,12 +131,16 @@ const startTimer = () => {
     this.loop = setInterval(() => {
         const currentTime = +timer.innerHTML;
         timer.innerHTML = currentTime + 1;
+        timerdois.innerHTML = currentTime + 1;
     }, 1000);
 };
 
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
+    nomeplayer.innerHTML = localStorage.getItem('player');
 
     startTimer();
     loadGame();
 };
+
+console.log(localStorage);

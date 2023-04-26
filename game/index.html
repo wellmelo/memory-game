@@ -16,14 +16,29 @@
         <header>
             <span class="player"></span>
             <span>
-                TIMER: <span class="timer">00</span>
+                <span class="timer-texto">TIMER:</span> <span class="timer">00</span>
                 <button onClick
-                ="window.location.reload();" class="refresh" disabled>PLAY AGAIN</button>
+                ="window.location.reload();" class="refresh">PLAY AGAIN</button>
             </span>
         </header>
 
         <div class="grid"></div>
+
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn"></button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Parabéns <span class="nomeplayer"></span>! Seu tempo foi de <span class="timerdois"></span> segundos!</p><br><br>
+                <button onClick="window.location.reload();" class="refresh">PLAY AGAIN</button>
+            </div>
+
+        </div>
+
     </main>
-    
 </body>
 </html>
