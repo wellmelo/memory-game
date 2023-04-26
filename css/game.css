@@ -58,6 +58,7 @@ header {
     backface-visibility: hidden;
     -webkit-transition: all 0.4s ease;
     -webkit-backface-visibility: hidden;
+    cursor: pointer;
 }
 
 .front {
@@ -76,6 +77,7 @@ header {
 .disabled-card {
     filter: saturate(0);
     opacity: 0.9;
+    cursor: auto;
 }
 
 button.refresh {
