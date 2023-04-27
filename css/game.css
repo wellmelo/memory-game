@@ -2,6 +2,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-width: 260px;
     background-image: url('../images/wallpaper-dbz-wellmelo.png');
     background-size: cover;
     min-height: 100vh;
@@ -140,6 +141,11 @@ button.refresh:disabled {
     .timer,
     .refresh {
         font-size: 0.7em !important;
+    }
+    .footer {
+        max-width: 270px;
+        text-align: center;
+        line-height: 1.5;
     }
 }
 
