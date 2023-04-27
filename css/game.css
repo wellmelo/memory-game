@@ -94,6 +94,8 @@ button.refresh {
     background-color: #a52a2a;
     color: #fff;
     cursor: pointer;
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
 }
 
 button.refresh:disabled {
