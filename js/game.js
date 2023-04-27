@@ -135,12 +135,6 @@ const startTimer = () => {
     }, 1000);
 };
 
-function time_convert(num) {
-    var hours = Math.floor(num / 60);
-    var minutes = num % 60;
-    return hours + ':' + minutes;
-}
-
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
     nomeplayer.innerHTML = localStorage.getItem('player');
