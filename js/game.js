@@ -135,8 +135,6 @@ const startTimer = () => {
     }, 1000);
 };
 
-console.log(currentTime);
-
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
     nomeplayer.innerHTML = localStorage.getItem('player');
