@@ -95,6 +95,26 @@ button.refresh:disabled {
     background-color: #ccc;
 }
 
+.footer {
+    margin-top: 20px;
+    color: #fff;
+    text-shadow: 2px 1px #000;
+    position: relative;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #a52a2a;
+    padding: 0px 5px;
+    border-radius: 5px;
+}
+
+.footer a:hover {
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
 @media (max-width: 800px) {
     .grid {

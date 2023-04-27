@@ -127,10 +127,6 @@ const loadGame = () => {
     });
 };
 
-function getTimestampInSeconds() {
-    return Math.floor(Date.now() / 1000);
-}
-
 const startTimer = () => {
     this.loop = setInterval(() => {
         const currentTime = +timer.innerHTML;
@@ -138,6 +134,12 @@ const startTimer = () => {
         timerdois.innerHTML = currentTime + 1;
     }, 1000);
 };
+
+function time_convert(num) {
+    var hours = Math.floor(num / 60);
+    var minutes = num % 60;
+    return hours + ':' + minutes;
+}
 
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
