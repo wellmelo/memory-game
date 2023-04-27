@@ -38,7 +38,7 @@ header {
     width: 100%;
     border-radius: 5px;
     position: relative;
-    background-color: #ccc;
+    background-color: #333;
     transition: all 0.4s ease;
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -60,6 +60,11 @@ header {
     -webkit-transition: all 0.4s ease;
     -webkit-backface-visibility: hidden;
     cursor: pointer;
+}
+
+.face:hover {
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
 }
 
 .front {
@@ -114,6 +119,23 @@ button.refresh:disabled {
 .footer a:hover {
     animation: pulse 1s infinite;
     animation-timing-function: linear;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
 }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
