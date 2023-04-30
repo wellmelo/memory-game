@@ -103,6 +103,23 @@ button.refresh:disabled {
     background-color: #ccc;
 }
 
+button.rankButton {
+    padding: 5px 10px;
+    font-size: 0.7em;
+    margin-left: 20px;
+    border-radius: 5px;
+    background-color: #a52a2a;
+    color: #fff;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
+button.rankButton:disabled {
+    cursor: auto;
+    background-color: #ccc;
+}
+
 .footer {
     margin-top: 20px;
     color: #fff;
@@ -229,6 +246,7 @@ button.refresh:disabled {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
+    min-height: 120px;
     border: 1px solid #888;
     width: 40%;
 
@@ -254,9 +272,10 @@ button.refresh:disabled {
 
     text-align: center;
     border-radius: 10px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+}
+
+.modal-content2 hr {
+    border-top: 1px solid red;
 }
 
 /* The Close Button */

@@ -11,6 +11,7 @@ const timerSecondsmodal = document.querySelector('.timer-secondsmodal');
 
 const timerdois = document.querySelector('.timerdois');
 const refresh = document.querySelector('.refresh');
+const rankButton = document.querySelector('.rankButton');
 
 // MODAL 1
 // Pega o modal
@@ -80,6 +81,7 @@ const createElement = (tag, className) => {
     const element = document.createElement(tag);
     element.className = className;
     refresh.style.display = 'none';
+    rankButton.style.display = 'none';
 
     return element;
 };
@@ -100,6 +102,7 @@ const checkEndGame = () => {
         // Quando ganha, exibe o modal
         modal.style.display = 'block';
         refresh.style.display = 'inline';
+        rankButton.style.display = 'inline';
     }
 };
 
@@ -240,5 +243,3 @@ window.onload = () => {
     startTimer();
     loadGame();
 };
-
-console.log(localStorage);
