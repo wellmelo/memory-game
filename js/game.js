@@ -126,7 +126,7 @@ const checkEndGame = () => {
         historico.push(resultado);
 
         // Classifica o histórico em ordem crescente de tempo
-        historico.sort((a, b) => a.tempo - b.tempo);
+        historico.sort((a, b) => a.tempo.localeCompare(b.tempo));
 
         // Armazena o histórico atualizado no localStorage
         localStorage.setItem('historico', JSON.stringify(historico));
