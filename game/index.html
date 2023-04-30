@@ -14,11 +14,12 @@
 
     <main>
         <header>
-            <span class="player"></span><button id="myBtn2" style="padding:3px 10px;cursor: pointer; background-color: brown;color:#fff;border-radius: 5px;">RANKING</button>
+            <span class="player"></span>
+            <button id="myBtn2" style="padding:3px 10px;cursor: pointer; background-color: brown;color:#fff;border-radius: 5px;">RANKING</button>
             <span>
                 <span class="timer-texto">TIMER:</span>
                 <span class="timer"></span>
-                <span id="timerCombined">VALENDO!</span>
+                <span id="timerCombined"><b style="color: #a52a2a;">VALENDO!</b></span>
                 <button onClick="window.location.reload();" class="refresh">PLAY AGAIN</button>
             </span>
         </header>
@@ -39,27 +40,25 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p>Congratulations <b><span class="nomeplayer"></span></b>! You completed the game in <b><span id="timerCombined2">00:00</span></b> time!</p>
+                <p>Congratulations 
+                    <b><span class="nomeplayer"></span></b>
+                    ! You completed the game in
+                    <b><span id="timerCombined2">00:00</span></b> 
+                    time!
+                </p>
                 <!--<button onClick="window.location.reload();" class="refresh">PLAY AGAIN</button> -->
             </div>
-
         </div>
 
-
-
-        <!-- The Modal -->
+        <!-- The Modal 2 -->
         <div id="myModal2" class="modal2">
-
             <!-- Modal content -->
             <div class="modal-content2">
                 <span class="close2">&times;</span>
-                <div id="ranking" style="padding-bottom: 10px;"><span>Ranking / Historic<hr style="margin-top: 10px; margin-bottom: 10px;"><br></span></div>
+                <div id="ranking-list" style="padding-bottom: 10px;"><span>Ranking / Historic<hr style="margin-top: 10px; margin-bottom: 10px;"><br></span></div>
                 <button onClick="window.location.reload();" class="rankButton">PLAY AGAIN</button>
             </div>
-
         </div>
-
-
 
     </main>
 </body>

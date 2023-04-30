@@ -14,16 +14,21 @@ const refresh = document.querySelector('.refresh');
 const rankButton = document.querySelector('.rankButton');
 
 // MODAL 1
-// Pega o modal
+// Get the modal
 var modal = document.getElementById('myModal');
 
-// Pega o botão que abre o modal
+// Get the button that opens the modal
 var btn = document.getElementById('myBtn');
 
-// Pega o elemento <span> que fecha o modal
+// Get the <span> element that closes the modal
 var span = document.getElementsByClassName('close')[0];
 
-// Quando o usuário clicar em <span> (x), feche o modal
+// When the user clicks the button, open the modal
+btn.onclick = function () {
+    modal.style.display = 'block';
+};
+
+// When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = 'none';
 };
@@ -92,7 +97,7 @@ let secondCard = '';
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
-    if (disabledCards.length === 20) {
+    if (disabledCards.length === 2) {
         clearInterval(this.loop);
 
         // Salva o tempo no localStorage
@@ -103,6 +108,38 @@ const checkEndGame = () => {
         modal.style.display = 'block';
         refresh.style.display = 'inline';
         rankButton.style.display = 'inline';
+
+        // Recupera os dados do localStorage
+        const nomeUsuario = localStorage.getItem('player');
+        const tempoJogo = localStorage.getItem('tempo');
+
+        // Cria um objeto que contém as informações do resultado
+        const resultado = {
+            nome: nomeUsuario,
+            tempo: tempoJogo,
+        };
+
+        // Recupera o histórico de resultados do localStorage ou cria um novo se não houver
+        const historico = JSON.parse(localStorage.getItem('historico')) || [];
+
+        // Adiciona o novo resultado ao histórico
+        historico.push(resultado);
+
+        // Classifica o histórico em ordem crescente de tempo
+        historico.sort((a, b) => a.tempo - b.tempo);
+
+        // Armazena o histórico atualizado no localStorage
+        localStorage.setItem('historico', JSON.stringify(historico));
+
+        // Percorre o histórico e cria elementos HTML para exibir as informações de cada registro
+        const rankingList = document.getElementById('ranking-list');
+        rankingList.innerHTML = '';
+        historico.forEach((resultado, indice) => {
+            const item = document.createElement('li');
+            const posicao = indice + 1;
+            item.innerHTML = `${posicao}º - ${resultado.nome} - ${resultado.tempo}s`;
+            rankingList.appendChild(item);
+        });
     }
 };
 
@@ -187,50 +224,16 @@ const startTimer = () => {
             ':' +
             String(remainingSeconds).padStart(2, '0');
 
+        timerCombined2.innerHTML =
+            String(minutes).padStart(2, '0') +
+            ':' +
+            String(remainingSeconds).padStart(2, '0');
+
         // Atualiza o timer de minutos e segundos separados
         timerMinutes.innerHTML = String(minutes).padStart(2, '0');
         timerSeconds.innerHTML = String(remainingSeconds).padStart(2, '0');
     }, 1000);
 };
-
-const playerName = localStorage.getItem('player');
-const tempo = localStorage.getItem('tempo');
-
-// cria um objeto com o nome do jogador e o tempo que ele levou para finalizar o jogo
-const jogador = {
-    nome: localStorage.getItem('player'),
-    tempo: localStorage.getItem('tempo'),
-};
-
-// adiciona o objeto ao array de ranking
-const ranking = [];
-ranking.push(jogador);
-
-// classifica o array de ranking com base no tempo de cada jogador
-ranking.sort(function (a, b) {
-    return a.tempo - b.tempo;
-});
-
-// seleciona o elemento onde o ranking será exibido
-const rankingContainer = document.getElementById('ranking');
-
-// classifica o array de ranking com base no tempo de cada jogador
-ranking.sort(function (a, b) {
-    return a.tempo - b.tempo;
-    console.log(ranking);
-});
-
-// percorre o array de ranking e cria elementos HTML para cada posição do ranking
-ranking.forEach(function (jogador, indice) {
-    // cria um elemento de lista
-    const listaItem = document.createElement('li');
-    listaItem.textContent = `${indice + 1}. ${jogador.player} - ${
-        jogador.tempo
-    } segundos`;
-
-    // adiciona o elemento de lista ao container do ranking
-    rankingContainer.appendChild(listaItem);
-});
 
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
