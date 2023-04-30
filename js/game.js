@@ -1,10 +1,18 @@
 const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
 const nomeplayer = document.querySelector('.nomeplayer');
+
 const timer = document.querySelector('.timer');
+const timerMinutes = document.querySelector('.timer-minutes');
+const timerSeconds = document.querySelector('.timer-seconds');
+
+const timerMinutesmodal = document.querySelector('.timer-minutesmodal');
+const timerSecondsmodal = document.querySelector('.timer-secondsmodal');
+
 const timerdois = document.querySelector('.timerdois');
 const refresh = document.querySelector('.refresh');
 
+// MODAL 1
 // Pega o modal
 var modal = document.getElementById('myModal');
 
@@ -25,6 +33,35 @@ window.onclick = function (event) {
         modal.style.display = 'none';
     }
 };
+// FIM MODAL 1
+
+// MODAL 2
+// Get the modal
+var modal2 = document.getElementById('myModal2');
+
+// Get the button that opens the modal
+var btn2 = document.getElementById('myBtn2');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName('close2')[0];
+
+// When the user clicks the button, open the modal
+btn2.onclick = function () {
+    modal2.style.display = 'block';
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal2.style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal2) {
+        modal2.style.display = 'none';
+    }
+};
+// FIM MODAL 2
 
 const characters = [
     'vedita',
@@ -55,6 +92,11 @@ const checkEndGame = () => {
 
     if (disabledCards.length === 2) {
         clearInterval(this.loop);
+
+        // Salva o tempo no localStorage
+        const time = timerCombined.innerHTML;
+        localStorage.setItem('tempo', time);
+
         // Quando ganha, exibe o modal
         modal.style.display = 'block';
         refresh.style.display = 'inline';
@@ -128,12 +170,68 @@ const loadGame = () => {
 };
 
 const startTimer = () => {
+    let seconds = 0;
+
     this.loop = setInterval(() => {
-        const currentTime = +timer.innerHTML;
-        timer.innerHTML = currentTime + 1;
-        timerdois.innerHTML = currentTime + 1;
+        seconds++;
+
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+
+        // Atualiza o timer de minutos e segundos combinados
+        timerCombined.innerHTML =
+            String(minutes).padStart(2, '0') +
+            ':' +
+            String(remainingSeconds).padStart(2, '0');
+
+        timerCombined2.innerHTML =
+            String(minutes).padStart(2, '0') +
+            ':' +
+            String(remainingSeconds).padStart(2, '0');
+
+        // Atualiza o timer de minutos e segundos separados
+        timerMinutes.innerHTML = String(minutes).padStart(2, '0');
+        timerSeconds.innerHTML = String(remainingSeconds).padStart(2, '0');
     }, 1000);
 };
+
+const playerName = localStorage.getItem('player');
+const tempo = localStorage.getItem('tempo');
+
+// cria um objeto com o nome do jogador e o tempo que ele levou para finalizar o jogo
+const jogador = {
+    nome: localStorage.getItem('player'),
+    tempo: localStorage.getItem('tempo'),
+};
+
+// adiciona o objeto ao array de ranking
+const ranking = [];
+ranking.push(jogador);
+
+// classifica o array de ranking com base no tempo de cada jogador
+ranking.sort(function (a, b) {
+    return a.tempo - b.tempo;
+});
+
+// seleciona o elemento onde o ranking será exibido
+const rankingContainer = document.getElementById('ranking');
+
+// classifica o array de ranking com base no tempo de cada jogador
+ranking.sort(function (a, b) {
+    return a.tempo - b.tempo;
+});
+
+// percorre o array de ranking e cria elementos HTML para cada posição do ranking
+ranking.forEach(function (jogador, indice) {
+    // cria um elemento de lista
+    const listaItem = document.createElement('li');
+    listaItem.textContent = `${indice + 1}. ${jogador.player} - ${
+        jogador.tempo
+    } segundos`;
+
+    // adiciona o elemento de lista ao container do ranking
+    rankingContainer.appendChild(listaItem);
+});
 
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');

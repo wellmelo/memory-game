@@ -157,12 +157,33 @@ button.refresh:disabled {
         width: 80% !important;
         padding-top: 30px !important;
     }
+
+    /* MODAL RANK */
+    .modal2 {
+        padding-top: 100px;
+    }
+    .modal-content2 {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80% !important;
+        padding-top: 30px !important;
+    }
+
     .close {
         margin-top: -30px !important;
     }
+
+    .close2 {
+        margin-top: -30px !important;
+    }
+
     .player,
     .timer-texto,
     .timer,
+    #timerCombined,
+    #timerCombined2,
     .refresh {
         font-size: 0.7em !important;
     }
@@ -176,6 +197,20 @@ button.refresh:disabled {
 
 /* The Modal (background) */
 .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 200px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal2 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -204,8 +239,46 @@ button.refresh:disabled {
     justify-content: center;
 }
 
+.modal-content P {
+    max-width: 300px;
+    margin: auto;
+}
+
+/* Modal Content Rank */
+.modal-content2 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+
+    text-align: center;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* The Close Button */
 .close {
+    width: 20px;
+    height: 10px;
+    margin-top: -25px;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* The Close Button */
+.close2 {
     width: 20px;
     height: 10px;
     margin-top: -20px;
@@ -215,8 +288,8 @@ button.refresh:disabled {
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close2:hover,
+.close2:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;

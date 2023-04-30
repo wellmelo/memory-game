@@ -14,11 +14,12 @@
 
     <main>
         <header>
-            <span class="player"></span>
+            <span class="player">AAA</span>
             <span>
-                <span class="timer-texto">TIMER:</span> <span class="timer">00</span>
-                <button onClick
-                ="window.location.reload();" class="refresh">PLAY AGAIN</button>
+                <span class="timer-texto">TIMER:</span>
+                <span class="timer"></span>
+                <span id="timerCombined">VALENDO!</span>
+                <button onClick="window.location.reload();" class="refresh">PLAY AGAIN</button>
             </span>
         </header>
 
@@ -27,6 +28,7 @@
         <div class="footer">
             Desenvolvido por Well Melo -> <a href="https://github.com/wellmelo" target="_blank">Meu GitHub</a>
         </div>
+
 
         <!-- Trigger/Open The Modal -->
         <button id="myBtn"></button>
@@ -37,11 +39,30 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p>Congratulations <span class="nomeplayer"></span>! You time is <span class="timerdois"></span> seconds!</p><br><br>
+                <p>Congratulations <b><span class="nomeplayer"></span></b>! You completed the game in <b><span id="timerCombined2">00:00</span></b> time!</p><br>
                 <button onClick="window.location.reload();" class="refresh">PLAY AGAIN</button>
             </div>
 
         </div>
+
+
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn2">ABRIR RANKING</button>
+
+        <!-- The Modal -->
+        <div id="myModal2" class="modal2">
+
+            <!-- Modal content -->
+            <div class="modal-content2">
+                <span class="close2">&times;</span>
+                <div id="ranking"></div>
+                <br>
+                <button onClick="window.location.reload();" class="refresh">PLAY AGAIN</button>
+            </div>
+
+        </div>
+
+
 
     </main>
 </body>
