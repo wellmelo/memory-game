@@ -187,11 +187,6 @@ const startTimer = () => {
             ':' +
             String(remainingSeconds).padStart(2, '0');
 
-        timerCombined2.innerHTML =
-            String(minutes).padStart(2, '0') +
-            ':' +
-            String(remainingSeconds).padStart(2, '0');
-
         // Atualiza o timer de minutos e segundos separados
         timerMinutes.innerHTML = String(minutes).padStart(2, '0');
         timerSeconds.innerHTML = String(remainingSeconds).padStart(2, '0');
@@ -222,6 +217,7 @@ const rankingContainer = document.getElementById('ranking');
 // classifica o array de ranking com base no tempo de cada jogador
 ranking.sort(function (a, b) {
     return a.tempo - b.tempo;
+    console.log(ranking);
 });
 
 // percorre o array de ranking e cria elementos HTML para cada posição do ranking
