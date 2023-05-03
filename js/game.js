@@ -170,13 +170,17 @@ const revealCard = ({ target }) => {
     if (target.parentNode.className.includes('reveal-card')) {
         return;
     }
-
-    if (firstCard === '') {
+    if (firstCard == '' && !target.parentNode.className.includes('grid')) {
         target.parentNode.classList.add('reveal-card');
         firstCard = target.parentNode;
-    } else if (secondCard === '') {
+        console.log(target.parentNode);
+    } else if (
+        secondCard === '' &&
+        !target.parentNode.className.includes('grid')
+    ) {
         target.parentNode.classList.add('reveal-card');
         secondCard = target.parentNode;
+        console.log(target.parentNode);
 
         checkCards();
     }
