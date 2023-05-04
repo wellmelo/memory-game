@@ -170,7 +170,7 @@ button.rankButton:disabled {
     background-color: #ccc;
 }
 
-#ranking-list {
+.tabela-ranking-list {
     overflow: scroll;
     overflow-x: overlay;
     max-height: 360px;
@@ -180,6 +180,7 @@ button.rankButton:disabled {
 /* width */
 ::-webkit-scrollbar {
     width: 1px;
+    height: 1px;
 }
 
 /* Track */
@@ -217,6 +218,23 @@ button.rankButton:disabled {
 .footer a:hover {
     animation: pulse 1s infinite;
     animation-timing-function: linear;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
 
 @keyframes pulse {

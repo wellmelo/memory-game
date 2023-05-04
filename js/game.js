@@ -97,7 +97,7 @@ let secondCard = '';
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
-    if (disabledCards.length === 20) {
+    if (disabledCards.length === 2) {
         clearInterval(this.loop);
 
         // Salva o tempo no localStorage
@@ -135,10 +135,18 @@ const checkEndGame = () => {
         const rankingList = document.getElementById('ranking-list');
         rankingList.innerHTML = '';
         historico.forEach((resultado, indice) => {
-            const item = document.createElement('li');
+            const linha = document.createElement('tr');
             const posicao = indice + 1;
-            item.innerHTML = `${posicao}º - ${resultado.nome} - ${resultado.tempo}s`;
-            rankingList.appendChild(item);
+            const posicaoColuna = document.createElement('td');
+            const nomeColuna = document.createElement('td');
+            const tempoColuna = document.createElement('td');
+            posicaoColuna.innerHTML = `${posicao}º`;
+            nomeColuna.innerHTML = resultado.nome;
+            tempoColuna.innerHTML = `${resultado.tempo}s`;
+            linha.appendChild(posicaoColuna);
+            linha.appendChild(nomeColuna);
+            linha.appendChild(tempoColuna);
+            rankingList.appendChild(linha);
         });
     }
 };
