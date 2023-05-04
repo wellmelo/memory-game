@@ -53,6 +53,7 @@ main {
     -moz-border-radius: 10px;
     border-radius: 10px;
     margin-bottom: 30px;
+    border-bottom: 3px solid #333;
 }
 
 .login_header {
