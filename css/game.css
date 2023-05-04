@@ -276,9 +276,7 @@ button.rankButton:disabled {
     }
 
     /* MODAL RANK */
-    .modal2 {
-        padding-top: 0px;
-    }
+
     .modal-content2 {
         background-color: #fefefe;
         margin: auto;
@@ -315,6 +313,10 @@ button.rankButton:disabled {
 
     #myBtn2 {
         margin-left: 0px !important;
+    }
+
+    .modal2 {
+        padding-top: 110px !important;
     }
 
     /* ESQUERDA NICK */
@@ -415,7 +417,7 @@ button.rankButton:disabled {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 200px; /* Location of the box */
+    padding-top: 85px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
