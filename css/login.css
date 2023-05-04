@@ -1,3 +1,5 @@
+/** FIM CSS BOTAO **/
+
 main {
     display: flex;
     flex-direction: column;
@@ -40,7 +42,7 @@ main {
     background: linear-gradient(-45deg, #6cc7fc, #f88787, #40ccc5, #06c283);
     background-size: 400% 400%;
     opacity: 0.9;
-    animation: gradient 15s ease infinite;
+    animation: gradient 5s ease infinite;
 
     align-items: center;
     display: flex;

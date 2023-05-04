@@ -5,6 +5,7 @@ const form = document.querySelector('.login-form');
 const nameInput = document.getElementById('nameInput');
 const nameError = document.getElementById('nameError');
 
+// TUDO OK
 nameInput.addEventListener('input', function () {
     if (nameInput.value.length > 13) {
         nameError.style.display = 'block';
