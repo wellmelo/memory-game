@@ -12,16 +12,31 @@
 </head>
 <body>
 
-    <main>
-        <header>
-            <span class="player"></span>
-            <button id="myBtn2" style="padding:3px 10px;cursor: pointer; background-color: brown;color:#fff;border-radius: 5px;">RANKING</button>
-            <span>
-                <span class="timer-texto">TIMER:</span>
-                <span class="timer"></span>
-                <span id="timerCombined"><b style="color: #a52a2a;">VALENDO!</b></span>
-                <button onClick="window.location.reload();" class="refresh">PLAY AGAIN</button>
-            </span>
+    <main class="conteudo">
+        <header class="headPai">
+
+                <div class="headLeft">
+                    <div class="headLeftUm">
+                        <div class="nick">NICK:</div>
+                        <div class="player"></div>
+                    </div>
+
+                    <div class="headLeftDois">                        
+                        <button id="myBtn2">RANKING</button>
+                    </div>
+                </div>
+
+
+                <div class="headRight">
+                    <div class="headRightUm">
+                        <div class="timer-texto">TIMER:</div>
+                        <div class="timer"></div>
+                        <span id="timerCombined"><b style="color: #a52a2a;">LET'S GO!</b></span>
+                    </div>
+                    <div class="headRightDois">                        
+                        <button onClick="window.location.reload();" class="refresh">PLAY AGAIN</button>
+                    </div>
+                </div>
         </header>
 
         <div class="grid"></div>
@@ -55,9 +70,10 @@
             <!-- Modal content -->
             <div class="modal-content2">
                 <span class="close2">&times;</span>
-                <b>Ranking</b> and <b>History</b><hr><br>
-                <div id="ranking-list" style="padding-bottom: 10px;">
-                    <span>Complete a round to enable.</span></div>
+                <span><b>Ranking</b> and <b>History</b><hr></span>
+                <div id="ranking-list">
+                    <span>Complete a round to enable.</span>
+                </div>
                 <button onClick="window.location.reload();" class="rankButton">PLAY AGAIN</button>
             </div>
         </div>

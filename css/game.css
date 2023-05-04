@@ -2,7 +2,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-width: 320px;
+    min-width: 325px;
     background-image: url('../images/wallpaper-dbz-wellmelo.png');
     background-size: cover;
     min-height: 100vh;
@@ -11,17 +11,80 @@ main {
     padding: 20px 20px 50px;
 }
 
-header {
+.headPai {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.6);
-    font-size: 1.2em;
     width: 100%;
     max-width: 1000px;
     padding: 15px;
     margin: 0 0 30px;
     border-radius: 5px;
+}
+
+.headLeft {
+    flex: 50;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.headLeftUm {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.headRight {
+    flex: 50;
+    display: flex;
+    justify-content: end !important;
+    align-items: center;
+}
+
+.headRightUm {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+#myBtn2 {
+    padding: 3px 10px;
+    cursor: pointer;
+    background-color: brown;
+    color: #fff;
+    border-radius: 5px;
+    margin-left: 200px !important;
+}
+
+.refresh {
+    padding: 3px 10px;
+    margin-left: 20px;
+    border-radius: 5px;
+    background-color: #a52a2a;
+    color: #fff;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
+#myBtn2,
+.refresh,
+.player,
+.timer-texto,
+.timer,
+#timerCombined,
+#timerCombined2 {
+    font-size: 1em;
+}
+.nick,
+.player,
+.timer-texto {
+    font-weight: 600;
+}
+.nick,
+.timer-texto {
+    padding-right: 5px;
 }
 
 .grid {
@@ -86,26 +149,13 @@ header {
     cursor: auto;
 }
 
-button.refresh {
-    padding: 5px 10px;
-    font-size: 0.7em;
-    margin-left: 20px;
-    border-radius: 5px;
-    background-color: #a52a2a;
-    color: #fff;
-    cursor: pointer;
-    animation: pulse 1s infinite;
-    animation-timing-function: linear;
-}
-
 button.refresh:disabled {
     cursor: auto;
     background-color: #ccc;
 }
 
 button.rankButton {
-    padding: 5px 10px;
-    font-size: 0.7em;
+    padding: 3px 10px;
     margin-left: 20px;
     border-radius: 5px;
     background-color: #a52a2a;
@@ -118,6 +168,35 @@ button.rankButton {
 button.rankButton:disabled {
     cursor: auto;
     background-color: #ccc;
+}
+
+#ranking-list {
+    overflow: scroll;
+    overflow-x: overlay;
+    max-height: 360px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
 }
 
 .footer {
@@ -163,6 +242,27 @@ button.rankButton:disabled {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
     }
+
+    #myBtn2,
+    .refresh,
+    .player,
+    .timer-texto,
+    .timer,
+    #timerCombined,
+    #timerCombined2 {
+        font-size: 1em !important;
+    }
+
+    #myBtn2 {
+        margin-left: 80px !important;
+    }
+
+    .headRightUm {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
     .modal {
         padding-top: 100px;
     }
@@ -177,7 +277,7 @@ button.rankButton:disabled {
 
     /* MODAL RANK */
     .modal2 {
-        padding-top: 100px;
+        padding-top: 0px;
     }
     .modal-content2 {
         background-color: #fefefe;
@@ -188,27 +288,68 @@ button.rankButton:disabled {
         padding-top: 30px !important;
     }
 
-    .close {
-        margin-top: -30px !important;
-    }
-
-    .close2 {
-        margin-top: -30px !important;
-    }
-
-    .player,
-    .timer-texto,
-    .timer,
-    #timerCombined,
-    #timerCombined2,
-    .refresh {
-        font-size: 0.7em !important;
-    }
     .footer {
         max-width: 270px;
         text-align: center;
         line-height: 1.5;
         font-size: 0.7em !important;
+    }
+}
+
+@media (max-width: 590px) {
+    .headPai {
+        display: flex;
+        padding: 7px;
+        font-size: 0.8em;
+    }
+
+    #myBtn2,
+    .refresh,
+    .player,
+    .timer-texto,
+    .timer,
+    #timerCombined,
+    #timerCombined2 {
+        font-size: 1em !important;
+    }
+
+    #myBtn2 {
+        margin-left: 0px !important;
+    }
+
+    /* ESQUERDA NICK */
+    .headLeft {
+        flex: 55;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .headLeftUm {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    /* DIREITA TIMER */
+    .headRight {
+        flex: 45;
+        display: flex;
+        flex-direction: column;
+    }
+    .headRightUm {
+        display: flex;
+        justify-content: space-around;
+    }
+    .headRightDois {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #timerCombined {
+        font-size: 12px !important;
+    }
+
+    .refresh {
+        margin-right: 17px;
     }
 }
 
@@ -238,9 +379,11 @@ button.rankButton:disabled {
 
     text-align: center;
     border-radius: 10px;
+    display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 .modal-content P {
@@ -249,13 +392,15 @@ button.rankButton:disabled {
 }
 /* The Close Button */
 .close {
+    right: 10px;
+    top: 0;
     width: 20px;
-    height: 10px;
-    margin-top: -25px;
+    height: 20px;
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    position: absolute;
 }
 
 .close:hover,
@@ -290,21 +435,30 @@ button.rankButton:disabled {
 
     text-align: center;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
 }
 
 .modal-content2 hr {
+    width: 100%;
     border-top: 1px solid red;
+    margin-bottom: 10px;
 }
 
 /* The Close Button */
 .close2 {
+    right: 10px;
+    top: 0;
     width: 20px;
-    height: 10px;
-    margin-top: -20px;
+    height: 20px;
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    position: absolute;
 }
 
 .close2:hover,
