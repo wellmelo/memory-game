@@ -54,7 +54,7 @@ main {
     background-color: brown;
     color: #fff;
     border-radius: 5px;
-    margin-left: 200px !important;
+    margin-left: 100px !important;
 }
 
 .refresh {
@@ -81,6 +81,9 @@ main {
 .player,
 .timer-texto {
     font-weight: 600;
+}
+.player {
+    max-width: 150px;
 }
 .nick,
 .timer-texto {
@@ -169,8 +172,10 @@ button.rankButton:disabled {
     cursor: auto;
     background-color: #ccc;
 }
-
-.tabela-ranking-list {
+.goku img {
+    width: 100%;
+}
+.tabelaRankingList {
     overflow: scroll;
     overflow-x: overlay;
     max-height: 360px;
@@ -179,8 +184,8 @@ button.rankButton:disabled {
 }
 /* width */
 ::-webkit-scrollbar {
-    width: 1px;
-    height: 1px;
+    width: 3px;
+    height: 2px;
 }
 
 /* Track */
@@ -191,13 +196,13 @@ button.rankButton:disabled {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: red;
+    background: #a52a2a;
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #b30000;
+    background: #a52a2a;
 }
 
 .footer {
@@ -218,6 +223,17 @@ button.rankButton:disabled {
 .footer a:hover {
     animation: pulse 1s infinite;
     animation-timing-function: linear;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+.avisoRank img {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding-top: 5px;
 }
 
 table {
@@ -272,13 +288,23 @@ tr:nth-child(even) {
     }
 
     #myBtn2 {
-        margin-left: 80px !important;
+        margin-left: 15px !important;
     }
 
     .headRightUm {
         display: flex;
         justify-content: flex-end;
         align-items: center;
+    }
+
+    /* ESQUERDA NICK */
+    .headLeft {
+        flex: 55;
+    }
+
+    /* DIREITA TIMER */
+    .headRight {
+        flex: 45;
     }
 
     .modal {
@@ -308,7 +334,7 @@ tr:nth-child(even) {
         max-width: 270px;
         text-align: center;
         line-height: 1.5;
-        font-size: 0.7em !important;
+        font-size: 0.8em !important;
     }
 }
 
@@ -349,6 +375,10 @@ tr:nth-child(even) {
         justify-content: space-around;
     }
 
+    .headLeftDois {
+        margin-top: 5px;
+    }
+
     /* DIREITA TIMER */
     .headRight {
         flex: 45;
@@ -362,6 +392,7 @@ tr:nth-child(even) {
     .headRightDois {
         display: flex;
         justify-content: space-around;
+        margin-top: 5px;
     }
 
     #timerCombined {
@@ -393,7 +424,7 @@ tr:nth-child(even) {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
-    min-height: 120px;
+    min-width: 325px;
     border: 1px solid #888;
     width: 40%;
 
@@ -409,6 +440,13 @@ tr:nth-child(even) {
 .modal-content P {
     max-width: 300px;
     margin: auto;
+}
+
+.modal-content img {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
 }
 /* The Close Button */
 .close {
@@ -452,7 +490,7 @@ tr:nth-child(even) {
     padding: 20px;
     border: 1px solid #888;
     width: 40%;
-
+    min-width: 325px;
     text-align: center;
     border-radius: 10px;
     display: flex;

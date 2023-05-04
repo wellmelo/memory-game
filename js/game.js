@@ -12,6 +12,8 @@ const timerSecondsmodal = document.querySelector('.timer-secondsmodal');
 const timerdois = document.querySelector('.timerdois');
 const refresh = document.querySelector('.refresh');
 const rankButton = document.querySelector('.rankButton');
+const tabelaRankingList = document.querySelector('.tabelaRankingList');
+const avisoRank = document.querySelector('.avisoRank');
 
 // MODAL 1
 // Get the modal
@@ -87,6 +89,8 @@ const createElement = (tag, className) => {
     element.className = className;
     refresh.style.display = 'none';
     rankButton.style.display = 'none';
+    tabelaRankingList.style.display = 'none';
+    avisoRank.style.display = 'inline';
 
     return element;
 };
@@ -97,7 +101,7 @@ let secondCard = '';
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
-    if (disabledCards.length === 2) {
+    if (disabledCards.length === 20) {
         clearInterval(this.loop);
 
         // Salva o tempo no localStorage
@@ -108,6 +112,8 @@ const checkEndGame = () => {
         modal.style.display = 'block';
         refresh.style.display = 'inline';
         rankButton.style.display = 'inline';
+        tabelaRankingList.style.display = 'inline';
+        avisoRank.style.display = 'none';
 
         // Recupera os dados do localStorage
         const nomeUsuario = localStorage.getItem('player');

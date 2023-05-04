@@ -7,6 +7,7 @@
     <title>Memory Game DBZ | Login</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script defer src="../js/game.js"></script>
 
 </head>
@@ -22,7 +23,7 @@
                     </div>
 
                     <div class="headLeftDois">                        
-                        <button id="myBtn2">RANKING</button>
+                        <button id="myBtn2"><i class="fa fa-trophy" aria-hidden="true"></i> RANKING</button>
                     </div>
                 </div>
 
@@ -34,7 +35,7 @@
                         <span id="timerCombined"><b style="color: #a52a2a;">LET'S GO!</b></span>
                     </div>
                     <div class="headRightDois">                        
-                        <button onClick="window.location.reload();" class="refresh">PLAY AGAIN</button>
+                        <button onClick="window.location.reload();" class="refresh"><i class="fa fa-gamepad" aria-hidden="true"></i> PLAY AGAIN</button>
                     </div>
                 </div>
         </header>
@@ -61,6 +62,7 @@
                     <b><span id="timerCombined2">00:00</span></b> 
                     time!
                 </p>
+                <img src="../images/goku-win.gif" alt="Goku Win!" class="responsive">
                 <!--<button onClick="window.location.reload();" class="refresh">PLAY AGAIN</button> -->
             </div>
         </div>
@@ -72,7 +74,12 @@
                 <span class="close2">&times;</span>
                 <span><b>Ranking</b> and <b>History</b><hr></span>
                 
-                <div class="tabela-ranking-list">
+                <div class="avisoRank">
+                    <b>Rank is enabled</b> after finding all the cards.
+                    <img src="../images/goku.gif" alt="Goku!" class="responsive">
+                </div>
+
+                <div class="tabelaRankingList">
                     <table>
                         <thead>
                             <tr>
@@ -81,13 +88,12 @@
                                 <th>Time</th>
                             </tr>
                         </thead>
-                        <tbody>
                             <tbody id="ranking-list">
                         </tbody>
                     </table>
                 </div>
                     
-                <button onClick="window.location.reload();" class="rankButton">PLAY AGAIN</button>
+                <button onClick="window.location.reload();" class="rankButton"><i class="fa fa-gamepad" aria-hidden="true"></i> PLAY AGAIN</button>
             </div>
         </div>
 

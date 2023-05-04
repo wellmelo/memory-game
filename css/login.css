@@ -1,8 +1,14 @@
-body {
-    background: linear-gradient(-45deg, #ccc, #eee, #c9c9c9, #fff);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    height: 100vh;
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 325px;
+    background-image: url('../images/wallpaper-dbz-wellmelo.png');
+    background-size: cover;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
 }
 
 @keyframes gradient {
@@ -17,12 +23,34 @@ body {
     }
 }
 
+#nameError {
+    color: #a52a2a;
+    display: none;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
 .login-form {
+    background: linear-gradient(-45deg, #6cc7fc, #f88787, #40ccc5, #06c283);
+    background-size: 400% 400%;
+    opacity: 0.9;
+    animation: gradient 15s ease infinite;
+
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: center;
+    padding: 50px 40px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 .login_header {
@@ -30,7 +58,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .login_header img {
@@ -73,4 +101,10 @@ body {
     cursor: auto;
     color: #aaa;
     border: 1px solid #e8e8e8;
+}
+
+.footer {
+    color: #fff;
+    text-shadow: 2px 1px #000;
+    position: relative;
 }
