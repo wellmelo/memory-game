@@ -228,6 +228,7 @@ button.rankButton:disabled {
     color: #fff;
     margin-top: 10px;
     text-shadow: 2px 1px #000;
+    display: flex;
 }
 
 .footer-sair a {
@@ -375,6 +376,12 @@ tr:nth-child(even) {
         line-height: 1.5;
         font-size: 0.8em !important;
     }
+    .footer-sair {
+        font-size: 0.8em !important;
+    }
+    .footer-sair a {
+        margin-bottom: 13px;
+    }
 }
 
 @media (max-width: 590px) {
@@ -382,6 +389,11 @@ tr:nth-child(even) {
         display: flex;
         padding: 7px;
         font-size: 0.8em;
+    }
+
+    .footer-sair {
+        display: flex;
+        flex-direction: column;
     }
 
     #myBtn2,
