@@ -397,6 +397,12 @@ tr:nth-child(even) {
     .footer_container_row {
         padding: 10px !important;
     }
+    .footer_left {
+        flex: 65;
+    }
+    .footer_right {
+        flex: 35;
+    }
 }
 
 @media (max-width: 590px) {
@@ -483,25 +489,24 @@ tr:nth-child(even) {
         font-size: 0.8em;
         flex-direction: column;
         align-items: center;
-        padding: 20px 10px;
+        padding: 40px 10px;
     }
     .footer_left {
         flex: 100;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 15px 0 0 0;
+    }
+    .footer_left a {
+        padding: 2px;
     }
     .footer_right {
         flex: 100;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-}
-
-@media (max-width: 345px) {
-    .footer_left {
-        margin-bottom: 20px;
+        padding: 15px 0;
     }
 }
 

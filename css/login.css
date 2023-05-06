@@ -213,6 +213,18 @@ main {
     }
 }
 
+@media (max-width: 800px) {
+    .footer_container_row {
+        padding: 10px !important;
+    }
+    .footer_left {
+        flex: 65;
+    }
+    .footer_right {
+        flex: 35;
+    }
+}
+
 @media (max-width: 590px) {
     body {
         background-color: #1f1919 !important;
@@ -222,30 +234,28 @@ main {
     }
     .footer_container_row {
         width: 100%;
-        height: 15vh !important;
         display: flex;
         color: #ccc;
         font-size: 0.8em;
         flex-direction: column;
         align-items: center;
-        padding: 20px 10px;
+        padding: 40px 10px;
     }
     .footer_left {
         flex: 100;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 15px 0 0 0;
+    }
+    .footer_left a {
+        padding: 2px;
     }
     .footer_right {
         flex: 100;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-}
-
-@media (max-width: 360px) {
-    .footer_left {
-        margin-bottom: 20px;
+        padding: 15px 0;
     }
 }
