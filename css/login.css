@@ -7,7 +7,7 @@ main {
     min-width: 325px;
     background-image: url('../images/wallpaper-dbz-wellmelo.png');
     background-size: cover;
-    min-height: 100vh;
+    height: 91vh;
     align-items: center;
     justify-content: center;
     padding: 20px 20px 50px;
@@ -106,8 +106,133 @@ main {
     border: 1px solid #e8e8e8;
 }
 
-.footer {
-    color: #fff;
-    text-shadow: 2px 1px #000;
-    position: relative;
+/* Start Footer */
+
+.footer_container {
+    background-color: #1f1919;
+    width: 100%;
+    height: 9vh;
+}
+.footer_container_row {
+    max-width: 1000px;
+    min-width: 325px;
+    margin: auto;
+    display: flex;
+    min-height: 60px;
+    color: #ccc;
+    font-size: 0.8em;
+}
+.footer_container_row a {
+    color: #ccc;
+}
+.footer_left {
+    flex: 50;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer_left i {
+    padding-right: 3px;
+}
+
+.footer_left a {
+    text-decoration: none;
+    padding: 3px 10px;
+    border-radius: 5px;
+    text-align: center !important;
+    background-color: #a52a2a;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.footer_left a:hover {
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
+/* BOTÃO SAIR DO JOGO */
+.footer_right {
+    flex: 50;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer_right a {
+    text-decoration: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 0 10px;
+    text-align: center !important;
+}
+
+.footer_right a:hover {
+    animation: pulse2 1s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes pulse2 {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(165, 42, 42, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(165, 42, 42, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(165, 42, 42, 0);
+    }
+}
+
+@media (max-width: 590px) {
+    .footer_container_row {
+        width: 100%;
+        display: flex;
+        color: #ccc;
+        font-size: 0.8em;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+    }
+    .footer_left {
+        flex: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer_right {
+        flex: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 345px) {
+    .footer_left {
+        margin-bottom: 20px;
+    }
 }
