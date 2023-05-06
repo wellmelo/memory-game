@@ -219,6 +219,7 @@ button.rankButton:disabled {
     min-height: 60px;
     color: #ccc;
     font-size: 0.8em;
+    padding: 10px;
 }
 .footer_container_row a {
     color: #ccc;
@@ -393,21 +394,15 @@ tr:nth-child(even) {
         padding-top: 30px !important;
     }
 
-    .footer {
-        max-width: 270px;
-        text-align: center;
-        line-height: 1.5;
-        font-size: 0.8em !important;
-    }
-    .footer-sair {
-        font-size: 0.8em !important;
-    }
-    .footer-sair a {
-        margin-bottom: 13px;
+    .footer_container_row {
+        padding: 10px !important;
     }
 }
 
 @media (max-width: 590px) {
+    body {
+        background-color: #1f1919 !important;
+    }
     .headPai {
         display: flex;
         padding: 7px;

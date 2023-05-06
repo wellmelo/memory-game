@@ -207,9 +207,22 @@ main {
     }
 }
 
+@media (max-width: 800px) {
+    .footer_container_row {
+        padding: 10px !important;
+    }
+}
+
 @media (max-width: 590px) {
+    body {
+        background-color: #1f1919 !important;
+    }
+    main {
+        height: 85vh;
+    }
     .footer_container_row {
         width: 100%;
+        height: 15vh !important;
         display: flex;
         color: #ccc;
         font-size: 0.8em;
@@ -231,7 +244,7 @@ main {
     }
 }
 
-@media (max-width: 345px) {
+@media (max-width: 360px) {
     .footer_left {
         margin-bottom: 20px;
     }
