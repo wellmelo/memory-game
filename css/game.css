@@ -57,6 +57,11 @@ main {
     margin-left: 100px !important;
 }
 
+#myBtn2:hover {
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+}
+
 .refresh {
     padding: 3px 10px;
     margin-left: 20px;

@@ -78,7 +78,7 @@ window.onclick = function (event) {
 
 // Adiciona Audio no evento Hover do Botao Ranking
 btn2.addEventListener('mouseover', () => {
-    const modal2AudioHover = new Audio('../audio/hover.mp3');
+    const modal2AudioHover = new Audio('../audio/soundhover.mp3');
     modal2AudioHover.play();
 });
 // Adiciona Audio no evento Click do Botao Ranking
@@ -88,17 +88,17 @@ btn2.addEventListener('click', () => {
 });
 // Adiciona Audio no evento Hover do Botao Refresh/Play Again
 refresh.addEventListener('mouseover', () => {
-    const RefreshAudioHover = new Audio('../audio/hover.mp3');
+    const RefreshAudioHover = new Audio('../audio/soundhover.mp3');
     RefreshAudioHover.play();
 });
 // Adiciona Audio no evento Hover do Botao Refresh/Play Again do Modal Rankin
 rankButton.addEventListener('mouseover', () => {
-    const RnkBtnModalAudioHover = new Audio('../audio/hover.mp3');
+    const RnkBtnModalAudioHover = new Audio('../audio/soundhover.mp3');
     RnkBtnModalAudioHover.play();
 });
 // Adiciona Audio no evento Hover no close do modal Ranking
 closeModalRank.addEventListener('mouseover', () => {
-    const modalcloseAudioHover = new Audio('../audio/hover.mp3');
+    const modalcloseAudioHover = new Audio('../audio/soundhover.mp3');
     modalcloseAudioHover.play();
 });
 // Adiciona Audio no evento Click no close do modal Ranking
@@ -219,6 +219,9 @@ const checkCards = () => {
         firstCard = '';
         secondCard = '';
 
+        const achouPar = new Audio('../audio/showcard.mp3');
+        achouPar.play();
+
         checkEndGame();
     } else {
         setTimeout(() => {
@@ -227,6 +230,9 @@ const checkCards = () => {
 
             firstCard = '';
             secondCard = '';
+
+            const errouPar = new Audio('../audio/exit.mp3');
+            errouPar.play();
         }, 500);
     }
 };
