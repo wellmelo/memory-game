@@ -205,34 +205,58 @@ button.rankButton:disabled {
     background: #a52a2a;
 }
 
-.footer {
-    margin-top: 20px;
-    color: #fff;
-    text-shadow: 2px 1px #000;
+/* Start Footer */
+
+.footer_container {
+    background-color: #1f1919;
+    width: 100%;
+}
+.footer_container_row {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    min-height: 60px;
+    color: #ccc;
+    font-size: 0.8em;
+}
+.footer_container_row a {
+    color: #ccc;
+}
+.footer_left {
+    flex: 50;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.footer a {
-    color: #fff;
+.footer_left i {
+    padding-right: 3px;
+}
+
+.footer_left a {
     text-decoration: none;
+    padding: 3px 10px;
     border-radius: 5px;
     text-align: center !important;
+    background-color: #a52a2a;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-.footer a:hover {
+.footer_left a:hover {
     animation: pulse 1s infinite;
     animation-timing-function: linear;
 }
 
 /* BOTÃO SAIR DO JOGO */
-.footer-sair {
-    color: #fff;
-    margin-top: 10px;
-    text-shadow: 2px 1px #000;
+.footer_right {
+    flex: 50;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.footer-sair a {
-    color: #fff;
+.footer_right a {
     text-decoration: none;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -241,9 +265,7 @@ button.rankButton:disabled {
     text-align: center !important;
 }
 
-.footer-sair a:hover {
-    color: #fff;
-    text-shadow: 2px 1px #333;
+.footer_right a:hover {
     animation: pulse2 1s infinite;
     animation-timing-function: linear;
 }
